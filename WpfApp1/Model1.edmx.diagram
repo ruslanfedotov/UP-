@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a10cb6144bbe4640a9633d31a77e0db6" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="up_11Model.Book" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="up_11Model.Complaint" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="up_11Model.Genre" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="up_11Model.ReadingList" Width="1.5" PointX="7.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="up_11Model.Review" Width="1.5" PointX="10.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="up_11Model.RoleRequest" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="up_11Model.Role" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="up_11Model.UnfreezeRequest" Width="1.5" PointX="8" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="up_11Model.User" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="up_11Model.FK_Book_User" ManuallyRouted="false" />
+        <AssociationConnector Association="up_11Model.FK_Reviews_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="up_11Model.FK_RL_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="up_11Model.FK_Complaints_User" ManuallyRouted="false" />
+        <AssociationConnector Association="up_11Model.FK_RL_User" ManuallyRouted="false" />
+        <AssociationConnector Association="up_11Model.FK_Reviews_User" ManuallyRouted="false" />
+        <AssociationConnector Association="up_11Model.FK_RR_User" ManuallyRouted="false" />
+        <AssociationConnector Association="up_11Model.FK_User_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="up_11Model.FK_UF_User" ManuallyRouted="false" />
+        <AssociationConnector Association="up_11Model.BookGenres" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

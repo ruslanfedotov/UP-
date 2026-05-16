@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfApp1.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Авторизация" Height="380" Width="320" WindowStartupLocation="CenterScreen" 
+        Background="#F0F2F5">
+    <Grid Margin="25">
+        <StackPanel>
+            <TextBlock Text="Добро пожаловать" FontSize="22" FontWeight="Bold" Foreground="#2C3E50" 
+                       HorizontalAlignment="Center" Margin="0,0,0,25"/>
+
+            <TextBlock Text="Имя пользователя:" Margin="0,0,0,5" Foreground="#34495E" FontWeight="SemiBold"/>
+            <TextBox x:Name="LoginTextBox" Margin="0,0,0,15" Height="32" Padding="8,5" 
+                     Background="White" BorderBrush="#BDC3C7" BorderThickness="1" FontSize="13"/>
+
+            <TextBlock Text="Ключ доступа:" Margin="0,0,0,5" Foreground="#34495E" FontWeight="SemiBold"/>
+            <PasswordBox x:Name="PasswordBox" Margin="0,0,0,25" Height="32" Padding="8,5" 
+                         Background="White" BorderBrush="#BDC3C7" BorderThickness="1" FontSize="13"/>
+
+            <Button Content="🔐 Войти" Click="LoginButton_Click" Margin="0,0,0,12" Height="38" 
+                    Background="#2980B9" Foreground="White" BorderThickness="0" FontSize="14" FontWeight="Bold" Cursor="Hand"/>
+            <Button Content="📝 Создать аккаунт" Click="RegisterButton_Click" Height="38" 
+                    Background="#95A5A6" Foreground="White" BorderThickness="0" FontSize="14" FontWeight="Bold" Cursor="Hand"/>
+        </StackPanel>
+    </Grid>
+</Window>

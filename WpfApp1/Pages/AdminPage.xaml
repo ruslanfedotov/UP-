@@ -1,0 +1,62 @@
+﻿<Page x:Class="WpfApp1.Pages.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="панель управления">
+    <Grid Margin="10">
+        <TabControl>
+            <TabItem Header="ПРЕТЕНЗИИ">
+                <DataGrid x:Name="ComplaintsGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Заявитель" Binding="{Binding User.DisplayName}" Width="100"/>
+                        <DataGridTextColumn Header="Объект" Binding="{Binding TargetType}" Width="100"/>
+                        <DataGridTextColumn Header="Основание" Binding="{Binding Reason}" Width="*"/>
+                        <DataGridTemplateColumn Header="Операции">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Удалить претензию" Click="DeleteComplaint_Click" Tag="{Binding ComplaintId}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="запросы на роль писателя">
+                <DataGrid x:Name="AuthorRequestsGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Кандидат" Binding="{Binding User.DisplayName}" Width="*"/>
+                        <DataGridTextColumn Header="Дата подачи" Binding="{Binding RequestDate, StringFormat=\{0:dd.MM.yyyy\}}" Width="Auto"/>
+                        <DataGridTemplateColumn Header="Решение">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="Одобрить" Click="AcceptAuthor_Click" Margin="2" Background="LightGreen"/>
+                                        <Button Content="Отказать" Click="RejectRequest_Click" Margin="2" Background="LightCoral"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Участники">
+                <DataGrid x:Name="UserGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Отображаемое имя" Binding="{Binding DisplayName}" Width="*"/>
+                        <DataGridTextColumn Header="Тип учётной записи" Binding="{Binding Roles.RoleName}" Width="Auto"/>
+                        <DataGridTemplateColumn Header="Управление доступом" Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Блокировка/Разблокировка" 
+                                         Click="ToggleFreeze_Click" 
+                                         Padding="5,2" 
+                                         Cursor="Hand"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>
